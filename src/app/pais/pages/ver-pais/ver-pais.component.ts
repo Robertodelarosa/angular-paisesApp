@@ -6,11 +6,4 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class VerPaisComponent {
-
-  termino: string = 'Hola mundo';
-
-  buscar() {
-    console.log(this.termino);
-  }
-}
+export class VerPaisComponent { }

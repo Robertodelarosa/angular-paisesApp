@@ -1,1 +1,42 @@
-<h2>Ver país</h2>
+<ng-container *ngIf="!pais; else paisExiste">
+  <div class="alert alert-info">Espere por favor...</div>
+</ng-container>
+<ng-template #paisExiste>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        País: <small>{{ pais.name.common }} </small>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="pais.flags.png" alt="pais.flag" class="img-thumbnail" />
+    </div>
+    <div class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+        <div class="list-group-item">
+          <strong>Nombre Oficial: </strong> {{ pais.name.official }}
+        </div>
+        <div class="list-group-item">
+          <strong>Problación: </strong> {{ pais.population | number }}
+        </div>
+        <div class="list-group-item">
+          <strong>Area: </strong> {{ pais.area | number }} km2
+        </div>
+        <div class="list-group-item">
+          <strong>Código alpha3: </strong> {{ pais.cca3 }}
+        </div>
+      </ul>
+    </div>
+  </div>
+  <h3>Traducciones</h3>
+  <div class="row">
+    <div class="col">
+      <span class="badge bg-primary mx-1">{{pais.translations["spa"].official}}</span>
+      <span class="badge bg-primary mx-1">{{pais.translations["jpn"].official}}</span>
+    </div>
+  </div>
+</ng-template>

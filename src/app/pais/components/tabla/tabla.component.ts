@@ -1,0 +1,12 @@
+import { Component, Input } from '@angular/core';
+import { Country } from '../../interfaces/pais.interface';
+
+@Component({
+  selector: 'app-pais-tabla',
+  templateUrl: './tabla.component.html',
+  styles: [
+  ]
+})
+export class PaisTablaComponent {
+  @Input('data') paises: Country[] = [];
+}

@@ -3,7 +3,7 @@ import { Country } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-pais-tabla',
-  templateUrl: './tabla.component.html',
+  templateUrl: './pais-tabla.component.html',
   styles: [
   ]
 })

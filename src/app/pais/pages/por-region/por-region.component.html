@@ -1,37 +1,39 @@
-<h3>
-  Buscar por region <small>{{ regionActiva | titlecase }}</small>
-</h3>
-<hr />
-<h5>Seleccione la region</h5>
-<div class="row">
-  <div class="col">
-    <!-- FORMAS DE TRABAJAR CON CCS DINAMICO -->
-    <!-- Primera forma utilizando one way data binding por cada clase -->
-    <!-- [class.btn-primary]="region === regionActiva" -->
-    <!-- [class.btn-outline-primary]="region !== regionActiva" -->
-    <!-- Segunda forma utilizando la directiva ngClass la cual acepta un objeto
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h3>
+    Buscar por region <small>{{ regionActiva | titlecase }}</small>
+  </h3>
+  <hr />
+  <h5>Seleccione la region</h5>
+  <div class="row">
+    <div class="col">
+      <!-- FORMAS DE TRABAJAR CON CCS DINAMICO -->
+      <!-- Primera forma utilizando one way data binding por cada clase -->
+      <!-- [class.btn-primary]="region === regionActiva" -->
+      <!-- [class.btn-outline-primary]="region !== regionActiva" -->
+      <!-- Segunda forma utilizando la directiva ngClass la cual acepta un objeto
       {
         'class' : condition
       }
     -->
-    <!-- [ngClass]="{
+      <!-- [ngClass]="{
       'btn-outline-primary': region !== regionActiva,
       'btn-primary': region === regionActiva
     }" -->
-    <!-- Tercera forma trabajar con css condicional directamente en el html -->
-    <!-- [class]="region === regionActiva ? 'btn-primary' : 'btn-outline-primary" -->
-    <button
-      *ngFor="let region of regiones"
-      (click)="activarRegion(region)"
-      class="btn"
-      [class]="getClaseCSS(region)"
-    >
-      {{ region | titlecase }}
-    </button>
+      <!-- Tercera forma trabajar con css condicional directamente en el html -->
+      <!-- [class]="region === regionActiva ? 'btn-primary' : 'btn-outline-primary" -->
+      <button
+        *ngFor="let region of regiones"
+        (click)="activarRegion(region)"
+        class="btn"
+        [class]="getClaseCSS(region)"
+      >
+        {{ region | titlecase }}
+      </button>
+    </div>
   </div>
-</div>
-<div *ngIf="paises.length > 0" class="row">
-  <div class="col">
-    <app-pais-tabla [data]="paises"></app-pais-tabla>
+  <div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+      <app-pais-tabla [data]="paises"></app-pais-tabla>
+    </div>
   </div>
 </div>

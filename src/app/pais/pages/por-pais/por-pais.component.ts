@@ -16,7 +16,7 @@ export class PorPaisComponent {
     this.hayError = false;
     this.paisService.buscarPais(this.termino)
       .subscribe({
-        next: (v) => console.log,
+        next: (paises) => console.log,
         error: (e) => this.hayError = true
       })
   }

@@ -14,30 +14,34 @@
   </div>
 </div>
 <hr />
-<div class="alert alert-danger">No se encontró nada con el término ABC</div>
-<div class="row">
-  <div class="col">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Bandera</th>
-          <th>Nombre</th>
-          <th>Población</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>bandera</td>
-          <td>nombre</td>
-          <td>2165165</td>
-          <td>
-            <a href="/pais/cri">Ver...</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div *ngIf="hayError; else tabla" ng-if class="alert alert-danger">
+  No se encontró nada con el término {{ termino }}
 </div>
+<ng-template #tabla>
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Bandera</th>
+            <th>Nombre</th>
+            <th>Población</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>bandera</td>
+            <td>nombre</td>
+            <td>2165165</td>
+            <td>
+              <a href="/pais/cri">Ver...</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>
